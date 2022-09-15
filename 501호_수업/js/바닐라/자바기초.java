@@ -69,7 +69,7 @@ public class 자바기초 {
 		
 		// char : 문자
 		// ***String : 문자*** => 클래스 타입. 그래서 얘만 대문자!
-		// ***boolean : true, false***
+		// ***boolean : true, false*** //이거 잘 적어서 외우자ㅠ
 		
 		String 이름 = "홍길동";
 		이름 = 이름 + "철수"; // 문자는 문자끼리 더해진다!
