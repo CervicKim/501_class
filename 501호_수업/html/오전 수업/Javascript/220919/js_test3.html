@@ -30,7 +30,27 @@
             }
             var img = document.getElementById("mimg"); 
             img.src = "../../image/" + idx + ".jpg";// 본 경로 폴더의~ .jpg확장자파일의~ 이름이 1씩 줄어드는 함수를 넣는다!!
+                        }
+
+
+
+            var set = " "; //set값을 열고
+        function start() {
+            set = setInterval(function () { // 버튼을 누르면 지정 초동안 변화한다. 그값을 set에 넣기.
+            // while (true){ //무한 반복! (next를 무한으로 누른 것과 같다. 과부하 걸릴 수 있어서 여기선 일단 안 쓴다.)
+            idx++;
+            if (idx == 5){
+                idx = 1;
+            }
+            var img = document.getElementById("mimg");
+            img.src = "../../image/" + idx + ".jpg";
+                                }, 1000); //이게 초 단위! 1초단위
+                        }
+
+        function end(){
+            clearInterval(set); //반복하는 값을 넣고 끝내는 함수 생성 후 버튼에 담김.
         }
+
     </script>
 </head>
 
@@ -38,6 +58,8 @@
 
     <img src="../../image/1.jpg" id="mimg" /> <!-- ..들 까지는 같은 경로라는 뜻. image라는 폴더에서/ 2.jpg 파일을 연결했단뜻.-->
     <div>
+        <button onclick="start()">시작</button>
+        <button onclick="end()">종료</button>
         <button onclick="pre()">이전</button> <!--버튼들.-->
         <button onclick="next()">다음</button>
     </div>
