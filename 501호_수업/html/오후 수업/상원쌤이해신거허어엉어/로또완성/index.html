@@ -80,6 +80,7 @@
     function main() {
       if (doCheckLottoNumber2()) {
         var myLotto = doCheckLottoNumber();
+        console.log(myLotto);
         if (myLotto != null) {
           var lottoResult = doCheckLottoResult();
           document.getElementById('result').innerHTML = lottoResult;
@@ -217,13 +218,16 @@
       for (var i = 0; i < lotto.length; i++) {
         if (lotto[i].localName == 'input') {
           var value = lotto[i].value;
+          console.log(value);
           if (value == '') {
             alert('로또 번호를 입력해주세요!');
             return false;
           }
         }
       }
+      return true;
     }
+
     //로또 등수를 확인하는 메소드
     function doCheckLottoRank(myLotto, LottoResult) {
       var count = 0; //로또 맞춘 수
