@@ -14,26 +14,16 @@
 // 파일안에 있는 내용을 위처럼 구분하여 출력하기.
 // ul 또는 table 태그 사용하면 됨.
 
-window.onload = function(){//윈도우온로드시작
+window.onload = function(){//윈도우온로드시작//얘가 있으면 너무 밑에있는 위에있든 상관없이! 안옮겨두돼!
     document.getElementById("docread").addEventListener('change', readFile);
     }//윈도우온로드끝
     async function readFile(e){//리드파일시작
         var file = e.target.files[0];
-        if(!file){//이프시작
+        if(!file){//이프시작 //!는 없다, 안맞다! 등의 부정을 뜻한다.
             return;
         }//이프끝
         var text = await file.text();
-        list = text.split('\n');
-        // text = text.split('\n');💥
-        //     for(var i=0; i<text.length; i++){//불러오기for문시작
-        //         document.write(text[i]+'<br>'); //1. doc.wr하면 디폴트 브라우져로?떠서 다크모드 적용이 안된 걸로 뜸.. 그걸 해결하려면? 1.
-        //     }//불러오기for문끝
-
-        // var reader = new FileReader();
-        // reader.onload = function(e){//리드온로드시작
-        //     filedata = e.target.result;
-        //     alert(reader.readAsText(file, 'euc-kr'));
-        // }//리드온로드끝???💥????여기있는거 다 핋요없대 어...?ㅠ
+        list = text.split('\n'); //텍스트를 분철하겠단 말.
 
         make_list();
 
