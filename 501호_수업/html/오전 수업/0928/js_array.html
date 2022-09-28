@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script>
+// \t => tab키
+// lotto.txt 파일 오픈하여 화면에 출력하기
+//  출력 형태는
+// ♒회차   발표일    번호1   번호2   번호3   번호4   번호5   번호6 ♒
+//    ..     ..       ..      ..      ..      ..       ..     ..
+// 파일안에 있는 내용을 위처럼 구분하여 출력하기.
+// ul 또는 table 태그 사용하면 됨.
+
+window.onload = function(){//윈도우온로드시작
+    document.getElementById("docread").addEventListener('change', readFile);
+    }//윈도우온로드끝
+    async function readFile(e){//리드파일시작
+        var file = e.target.files[0];
+        if(!file){//이프시작
+            return;
+        }//이프끝
+        var text = await file.text();
+        list = text.split('\n');
+        // text = text.split('\n');💥
+        //     for(var i=0; i<text.length; i++){//불러오기for문시작
+        //         document.write(text[i]+'<br>'); //1. doc.wr하면 디폴트 브라우져로?떠서 다크모드 적용이 안된 걸로 뜸.. 그걸 해결하려면? 1.
+        //     }//불러오기for문끝
+
+        // var reader = new FileReader();
+        // reader.onload = function(e){//리드온로드시작
+        //     filedata = e.target.result;
+        //     alert(reader.readAsText(file, 'euc-kr'));
+        // }//리드온로드끝???💥????여기있는거 다 핋요없대 어...?ㅠ
+
+        make_list();
+
+    }//리드파일끝   
+
+//♒리스트 헤더?만 지정하는 방법.♒                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+function make_list(){//메이크펑션시작
+    var out = "<table>"
+
+out += "<tr> <th>회차</th><th>발표일</th><th>번호1</th><th>번호2</th>"; 
+out += "<th>번호3</th><th>번호4</th><th>번호5</th><th>번호6</th></tr>";
+//th = 줄 헤더. tr = 줄에서 한 칸!
+//💖alt 누른채로 클릭하면? 커서 다중입력 ㄷ ㄷㄷㄷ  ㄷ한꺼번에 다 수정가능;ㅣㅈ디ㅑ멍💖
+
+    for(var i in list){//메이크포문시작
+        out+= "<tr>";
+        let temp = list[i].split("\t"); //리스트 한 칸마다 탭(\t)이 지정됨!
+            for(var k in temp){//안의for시작
+                out+= "<td>" + temp[k]+ "</td>";
+            }//안의for끝
+        out += "</tr>";
+    }//메이크포문끝
+    out += "</table>";
+    document.getElementById("list").innerHTML = out;
+} //메이크펑션끝
+</script>
+<style>
+    table tr td{ 
+    border: 1px solid black;
+    width: 50px;
+                }
+</style>
+</head>
+<body>
+    <div>
+        <input type="file" id="docread">
+    </div>
+    <div id="list">
+        
+    </div>
+</body>
+</html>
