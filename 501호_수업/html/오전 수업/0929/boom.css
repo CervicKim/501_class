@@ -25,3 +25,6 @@ table tr td{
     height: 50px;
     border: 1px solid black;
 }
+img{
+    opacity: 0;
+}

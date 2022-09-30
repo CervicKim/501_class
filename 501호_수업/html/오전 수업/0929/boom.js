@@ -17,7 +17,7 @@ window.onload = function(){
         table += "<tr>";
         for(var k =0; k <20; k++){
             if(board[] == 1)//폭탄있
-                table+="<td><img src = image/"boom.jpg"></td>"
+               table+="<td class='bm'></td></td>"
             else 
             table += "<td> <\td>";
         }
