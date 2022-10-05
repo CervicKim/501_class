@@ -1,0 +1,23 @@
+자바스크립트 부모자식 스크립트 : 검색하는 요령
+1005 지금 배우는 게 제일 밑바닥. 파운데이션 영역이다!
+
+SQL : 데이터베이스에 저장된 데이터를 불러오는 명령어!
+select : (조회하다) 컬럼
+from : 테이블 이름에서!
+where : 필터링
+
+
+그룹핑, 정렬, 그룹핑 필터링
+
+-- SQL 실행순서!!!
+-- from -> where -> select
+-- 정렬 order by
+-- 내림차순 desc / 오름차순 asc(*<- 기본 디폴트 값이라 굳이 쓰지 않는다!)
+-- 차순 포함 실행순서
+ from => where => select => order by
+
+*** where 조건에는 sum, avg, max... 같은 함수를 사용할 수 없다!!!!!!!!***
+대신 쓰이는 게 HAVING!!
+
+실행 순서!
+ from(항상 시작!) -> where -> group by -> having -> select -> order by (항상마지막!)
