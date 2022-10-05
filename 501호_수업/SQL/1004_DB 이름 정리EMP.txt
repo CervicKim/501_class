@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 ## EMP 테이블
 
@@ -9,3 +10,16 @@ hiredate : 입사 날짜
 sal : 급여
 comm : (커미션)보너스
 deptno : 부서 번호
+=======
+
+## EMP 테이블
+
+empno : 사원 번호
+ename : 사원 이름
+job : 직책, 직무
+mgr : 내 사수 번호
+hiredate : 입사 날짜
+sal : 급여
+comm : (커미션)보너스
+deptno : 부서 번호
+>>>>>>> dd7ca453b0b503bc7a29e3664e1ff69558bda597
