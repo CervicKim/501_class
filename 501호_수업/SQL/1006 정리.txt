@@ -15,7 +15,14 @@ having sum, max, min, count, avg 사용 가능
 
 select: 데이터 조회
 
-오늘 배울 것들!
-데이터를 삭제하다
-데이터를 수정하다
-데이터를 삽입하다
+-- 오늘 배울 것들!
+-- 데이터를 삽입하다 : insert
+-- 데이터를 수정하다 : update
+-- 데이터를 삭제하다 : delete
+
+-- count(*) : 전체를 의미한다!!!
+
+where vs Having의 차이점!
+함수x / 함수o
+
+숫자, 문자 구분 확실히!!

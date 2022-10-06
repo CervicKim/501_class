@@ -9,3 +9,5 @@ hiredate : 입사 날짜
 sal : 급여
 comm : (커미션)보너스
 deptno : 부서 번호
+
+-- count(*) : 전체를 의미한다!!!
