@@ -19,5 +19,8 @@ where : 필터링
 *** where 조건에는 sum, avg, max... 같은 함수를 사용할 수 없다!!!!!!!!***
 대신 쓰이는 게 HAVING!!
 
+group by : 묶다 (관련 있는 것들끼리)
+그룹핑 될만 한 것들은? : 연봉, 입사 날짜, 부서번호, 직업
+
 실행 순서!
  from(항상 시작!) -> where -> group by -> having -> select -> order by (항상마지막!)
