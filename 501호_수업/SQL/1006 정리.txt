@@ -1,0 +1,28 @@
+select <컬럼 조회
+from <테이블 이름
+where <필터링
+group by <그룹핑
+having <그룹핑 관련 필터링
+order by <정렬 (디폴트값: asc 오름차순/ dec
+
+where과 having 의 차이점:
+
+where에서는 sum, max, min, count, avg(단일행 함수) 사용 불가능
+having sum, max, min, count, avg 사용 가능
+
+***SQL 실행순서
+1. from  ->  2. where  ->  3. group by  ->  4. having  ->  5. select  ->  6. order by
+
+select: 데이터 조회
+
+-- 오늘 배울 것들!
+-- 데이터를 삽입하다 : insert
+-- 데이터를 수정하다 : update
+-- 데이터를 삭제하다 : delete
+
+-- count(*) : 전체를 의미한다!!!
+
+where vs Having의 차이점!
+함수x / 함수o
+
+숫자, 문자 구분 확실히!!
