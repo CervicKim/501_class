@@ -24,7 +24,7 @@ history : 윈도우가 방문한 URL 정보.
 innerHeight (outerHeight(윈도우밖테두리), inner/outerWidth도 있대.) : window.innerHeight 쓰면 현재 브라우저의 다큐먼트 영역의 높이를 알 수 있다. 
 location : 현재 문서의 URL 정보. 페이지마다 하나씩만 존재.
 menubar : 상단의 북마크 등의 메뉴바 표시 여부 결정. y/n 보여주까마까
-opener : open() 함수로 열리게 해준 윈도우 이름. (이게 팝업이래!!!!!!!!!!!!!!!!!!!!!!!!!)
+opener : open() 함수로 열리게 해준 윈도우 이름. (이게 팝업이래!!!!!!!!!!!!!!!!!!!!!!!!!) 나를 열어준 부모!!
 name : window 이름.
 pageXOffset: 윈도우에 표시ㅏ되는 X 위치. /pageYIffset: Y위치 (스크롤이 길어짐에따라 위치가달라진대 와우;왜냐하면 위로 올라가면서 윗부분이 굴려지니까???!!!대박;;;;;;;;;
 scrollbars: 스크롤바 표시 여부. (일부 브라우저에만 사용된대. 의외..)
@@ -53,3 +53,9 @@ open : 새 윈도우 생성
 	-> 	_width : 새 창 너비 지정
 	-> 	_left : 모니터 화면 왼쪽에서부터 위치.
 	-> 	-top : 		위쪽	
+	-> 	channelmode : 전체화면 y/n
+	->	location : 주소표실즈 표식
+	->	menubars : 메뉴바 표시여부 y/n
+	->	scrollbars : 스크롤바 표시여부 y/n
+	-> 	status : 상태바 표시여부 (y/n)
+	->	resizable : 
