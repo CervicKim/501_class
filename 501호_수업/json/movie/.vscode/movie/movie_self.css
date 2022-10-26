@@ -1,0 +1,40 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: 0.3s; 
+}
+/*제일 기본!! 뭐든 css 시작에 깔아야하는 베이스다!!!*/
+
+.container {
+        width: 100%;
+        height: auto;
+        background-color: darkred;
+        margin: 50px auto;
+}
+
+.title {
+        text-align: center;
+        font-size: 42px;
+}
+
+.movie-row {
+        display: flex;
+        justify-content: space-between; /*사이간격을 일정하게*/
+        margin-bottom: 50px;
+}
+
+.series-row {
+    display: flex;
+    justify-content: space-between;
+}
+.item {
+    flex-basis: 17%; /* 전체가 100%에서 
+    우리가 담아야할 포스터는 총 5개니까 5로 나누셈
+    그러면 20씩! 그리고 여백이 어느정돈 있어야하니까 17%인거임!
+    그냥 막 쓴 게 아니라니... 넘 신기히다 8ㅇ8/// */
+}
+.poster {
+    width: 100px;
+    height: auto;
+}

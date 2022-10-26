@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    
 </head>
 <body>
     <input id ="name" type="text" placeholder="이름을 입력하시오" value="설정도내가하는거구나"/>
@@ -18,6 +19,13 @@
         <option value="episode">episode</option>
     </select>
     <button onclick="doSearch()">영화 검색</button>
+
+    <h3 id="movieTitle"></h3>
+    <p>개봉년도 : <span id="year"></span> </p>
+    <p>영화 고유번호(PK) : <span id="movieId"></span></p>
+    <p>영화 포스터 : <span id="poster"></span></p>
+
+
 
 </body>
 <script src="https://code.jquery.com/jquery-3.6.1.js" 
@@ -50,9 +58,35 @@ function doSearch(){
         dataType: 'json',
         success: function (response){
             console.log(response);
+            console.log(response.Search[0].Title);
+            console.log(response.Search[0].imdbID);
+            //크레이지,스투피드,러브랑 영화고유아이디 출력하기 @ㅡ@;;
+            var movieTitle = response.Search[0].Title;
+            $('#movieTitle').append(movieTitle); //html에도 뜨게!
+            $('#year').append(response.Search[0].Year);
+            $('#movieId').append(response.Search[0].imdbID);
+            var html = '<img src="'+response.Search[0].Poster+'">';
+            $('#poster').append(html); //append == 추가하다!!
+            //== document.getElementById('poster')이거랑 같아!
         },
     });
 }
+/*파라미터의 괄호()가 인터넷 창에선 ?가 된다! 인터넷창 주소 알아보기.
 
+ ?는 프로그래밍에서 파라미터와 같은 역할을 함. 
+    ?: 쿼리스트링
+    = 는 대입연산자 그대로.
+    &는 콤마 
+ https://entertain.naver.com/read?oid=076&aid=0003931625
+ 파라미터 값이 총 몇 개 :2개
+ 파라미터 값 : oid, aid
+ 
+ http://www.omdbapi.com/?apiKey=xx&s=love&type=movie
+ 이 주소의 파라미터 값이 몇 개 : 3
+ 파라미터 값: apiKey, s, type
+ 데이터 : xx, love, movie
+ 
+ */
 </script>
+ 
 </html>
