@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>해외영화 사이트</title>
     <link rel="stylesheet" href="movie_self.css"/>
+    
 </head>
 <body>
     <div class="container">
@@ -13,38 +14,59 @@
             <h2>민서의 영화나라</h2>
         </div>
         <div class="movie-row">
-        <div class="item">
-            <div id="movie-0" class="poster"></div>
+        <div class="item" data-tilt onclick="getMovieDateilInfo(this)">
+            <div id="movie-0" class="poster"></div> <!--포스터 이미지 따오기-->
+            <h4  id="movie-title-0" class="title"></h4> <!--영화 제목-->
+            <p id="movie-year-0" class="year"></p> <!--개봉년도 표시-->
+            <input id= "movie-id-0" type="hidden"/> <!--그냥은 안보이지만 콘솔을 보면 상세정보 다 뜨게~-->
         </div>
-        <div class="item">
+        <div class="item" onclick="getMovieDateilInfo(this)">
             <div id="movie-1" class="poster"></div>
+            <h4 id="movie-title-1" class="title"></h4>
+            <p id="movie-year-1" class="year"></p>
+            <input id= "movie-id-0" type="hidden"/>
         </div>
-        <div class="item">
+        <div class="item" onclick="getMovieDateilInfo(this)">
             <div id="movie-2" class="poster"></div>
+            <h4 id="movie-title-2" class="title"></h4>
+            <p id="movie-year-2" class="year"></p>
+            <input id= "movie-id-0" type="hidden"/>
         </div>
-        <div class="item">
+        <div class="item" onclick="getMovieDateilInfo(this)">
             <div id="movie-3" class="poster"></div>
+            <h4 id="movie-title-3" class="title"></h4>
+            <p id="movie-year-3" class="year"></p>
+            <input id= "movie-id-0" type="hidden"/>
         </div>
-        <div class="item">
-            <div id="movie-4" class="poster"></div>
+        <div class="item" onclick="getMovieDateilInfo(this)">
+                <div id="movie-4" class="title"></div>
+                <h4 id="movie-title-4" class="poster"></h4>
+                <p id="movie-year-4" class="year"></p>
+                <input id= "movie-id-0" type="hidden"/>
         </div>
     </div>
 
     <div class="series-row">
         <div class="item">
             <div id="series-0" class="poster"></div>
+            <h4  id="series-title-0" class="title"></h4>
         </div>
         <div class="item">
+            
             <div id="series-1" class="poster"></div>
+            <h4  id="series-title-1" class="title"></h4>
         </div>
         <div class="item">
             <div id="series-2" class="poster"></div>
+            <h4  id="series-title-2" class="title"></h4>
         </div>
         <div class="item">
             <div id="series-3" class="poster"></div>
+            <h4  id="series-title-3" class="title"></h4>
         </div>
         <div class="item">
             <div id="series-4" class="poster"></div>
+            <h4  id="series-title-4" class="title"></h4>
         </div>
     </div>
     </div>
@@ -53,6 +75,7 @@
     <script src="https://code.jquery.com/jquery-3.6.1.js" 
 integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" 
 crossorigin="anonymous"></script>
+
 <script>
         //영화 사이트 조회하기~~!!!
 const API_KEY = '764ed67'; /*왜 API_KEY를 대문자로 썼게? 상수값의 변수이름은 대문자로!!작성. 카멜표기법이 아닌 언더바로 표기한다!! 약속~*/
@@ -81,6 +104,7 @@ const API_KEY = '764ed67'; /*왜 API_KEY를 대문자로 썼게? 상수값의 �
                     var html = '<img src="' + posterUrl + '">';
                         //id가 movie-0~ -4인 태그에 시리즈 포스터 사진 append 하기! (append == 추가하다)
                     $('#series-'+ i).append(html);
+                    $('#series-title-'+i).append(response.Search[i].Title); 
                     }
                 },
         });
@@ -89,6 +113,7 @@ const API_KEY = '764ed67'; /*왜 API_KEY를 대문자로 썼게? 상수값의 �
     function initMovie(){
         var search = 'friends';
         var type = 'movie';
+        var year = 'year';
         $.ajax({
             url:
           'http://www.omdbapi.com/?apiKey=' +
@@ -107,10 +132,33 @@ const API_KEY = '764ed67'; /*왜 API_KEY를 대문자로 썼게? 상수값의 �
                 //img 태그 생성. 포스터 이미지 경로를 src에 넣어주기
             var html = '<img src="' + posterUrl + '">';
                 //id가 movie-0 ~ -4인 태그에 영화 포스터 사진 append!
-                $('#movie-'+i).append(html);    
+                $('#movie-'+i).append(html);   
+                $('#movie-title-'+i).append(response.Search[i].Title); 
+                $('#movie-year-'+i).append(response.Search[i].Year);
+
+                $('#movie-id-'+i).val(response.Search[i].imdbID);
                 }
             },
         });
     }
-</script>
+    function getMovieDateilInfo(obj){
+        console.log(obj.children[3].value);
+        var movieId = obj.children[3].value;
+        //http://www.omdbapi.com/?apiKey=764ed67&i=tt0433400&plot=full
+        $.ajax({
+            url:
+          'http://www.omdbapi.com/?apiKey=' +
+          API_KEY +
+          '&i=' +
+          movieId +
+          '&plot=full' ,
+        type: 'GET',
+        dataType: 'json',
+        success : function(response){
+            //영화 상세정보 확인!
+            console.log(response);
+        }
+        });
+    }
+    </script>
 </html>
