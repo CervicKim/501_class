@@ -18,3 +18,9 @@ http://www.omdbapi.com/?apiKey=764ed67&y=2018&s=Love&type=movie
 
 문: 2015년에 개봉한, love가 들어간 에피소드 중 결과는 3페이지만 보고싶을때!
 http://www.omdbapi.com/?apiKey=764ed67&type=episode&t=Love&y=2018&page=3
+
+
+<script src='../js/tilt.js'></script>
+못한 거 : 
+tilt 적용해서 포스터가 움직이기
+클릭하면 영화 상세정보 뜨는 거.....
