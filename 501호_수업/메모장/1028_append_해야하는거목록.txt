@@ -9,3 +9,6 @@
 "languages"
 "awards"
 "poster-img"
+
+이 친구들 하나하나 append해서 정보 뜨게 하고
+정보 겹치지 않게 empty도 윗쪽에 하나하나 걸어주자.

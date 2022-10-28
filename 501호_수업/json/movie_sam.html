@@ -26,7 +26,7 @@
       <div class="movie-section">
         <div class="back">
           <!-- 뒤로가기 -->
-          <a href="#">◀ Back to Home</a>
+          <a href="#">◀ Come back Home</a>
         </div>
         <div class="section-left">
           <!-- 영화 상세정보 -->
@@ -176,11 +176,6 @@
             $('#series-' + i).append(html);
             $('#series-title-' + i).append(response.Search[i].Title);
             $('#series-year-' + i).append(response.Search[i].Year);
-            $("#Rating").empty();
-            $("#Rating").append(response.imdbRating);
-            // <!-- 여기다가 줄줄이 append 만들면 된다.-->
-            // <!-- 다음 게시글 것이 자꾸 겹치는 건 어떡하면 될까? = 
-              // append 위에 하나하나 empty를 걸어야한다.(wow...)-->
             
           }
         },
@@ -214,6 +209,12 @@
             $('#movie-year-' + i).append(response.Search[i].Year);
             //input hidden에 영화 고유 아이디 추가하기!
             $('#movie-id-' + i).val(response.Search[i].imdbID);
+            $("#Rating").empty();
+            $("#Rating").append(response.imdbRating);
+            // <!-- 여기다가 줄줄이 append 만들면 된다.-->
+            // <!-- 다음 게시글 것이 자꾸 겹치는 건 어떡하면 될까? = 
+              // append 위에 하나하나 empty를 걸어야한다.(wow...)-->
+            
           }
         },
       });
@@ -241,6 +242,10 @@
           
         },
       });
+    }
+    // 뒤로가는 버튼이 정말 뒤로가게 해주게.
+    function doClose(){
+      $('.movie-section').css('visibilty','hidden');
     }
   </script>
 </html>
