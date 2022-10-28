@@ -5,11 +5,115 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>해외영화 사이트</title>
+<!--구글 폰트-->
+    <link
+  href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap"
+  rel="stylesheet"/>
+<!--아이콘 예쁜 거 잔뜩~-->
+  <link
+  rel="stylesheet"
+  href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+  integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+  crossorigin="anonymous"/>
     <link rel="stylesheet" href="movie_self.css"/>
     
 </head>
 <body>
+
+영화 상세 정보
+    <div class="movie-section">
+        <div class="back">
+<!--뒤로 가기 버튼-->
+            <a href="#">◀ come back Home</a>
+        </div>
+    <div class="section-left">
+<!--영화 상세 정보-->
+        <div class="movie-title" id="movie-title"></div>
+<!-- 영화 평점 -->
+        <div class="movie-rating"></div>
+        <span>Rating<i class="fa fa-star"></i> : <span id="rating"></span></span>
+        <span>Votes<i class="fa fa-thumbs-up"></i> : <span id-="votes"></span></span>
+        <span>Runtime<i class="fa fa-film"></i> : <span id="runtime"></span></span>
+        <span>Year<i class="fa fa-calendar"></i> : <span id="year"></span></span>
+<!-- 영화 줄거리 -->
+        <div class="movie-plot" id="movie-plot"></div>
+<!-- 영화 출연감독, 배우, 장르, 수상내역 -->
+        <div class="movie-info"></div>
+        <div>
+            <span>Director</span>
+            <span id="Director"></span>
+        </div>
+        <div>
+            <span>Stars</span>
+            <span id="stars"></span>
+        </div>
+        <div>
+            <span>Generes</span>
+            <span id="generes"></span>
+        </div>
+        <div>
+            <span>Language</span>
+            <span id="language"></span>
+        </div>
+        <div>
+            <span>Awards</span>
+            <span id="awards"></span>
+        </div>
+
+    </div>
+        <div class="section-right"></div>
+    </div>
+
+
+
+
+
+
+<!--영화 리스트-->
     <div class="container">
+        
+<!--영화 상세 정보-->
+    <div class="movie-section">
+        <div class="back">
+<!--뒤로 가기 버튼-->
+            <a href="#">◀ come back Home</a>
+        </div>
+    <div class="section-left">
+<!--영화 상세 정보-->
+<div class="movie-title" id="movie-title"></div>
+<!-- 영화 평점 -->
+        <div class="movie-rating"></div>
+        <span>Rating<i class="fa fa-star"></i> : <span id="rating"></span></span>
+        <span>Votes<i class="fa fa-thumbs-up"></i> : <span id-="votes"></span></span>
+        <span>Runtime<i class="fa fa-film"></i> : <span id="runtime"></span></span>
+        <span>Year<i class="fa fa-calendar"></i> : <span id="year"></span></span>
+<!-- 영화 줄거리 -->
+        <div class="movie-plot" id="movie-plot"></div>
+<!-- 영화 출연감독, 배우, 장르, 수상내역 -->
+        <div class="movie-info"></div>
+        <div>
+            <span>Director</span>
+            <span id="Director"></span>
+        </div>
+        <div>
+            <span>Stars</span>
+            <span id="stars"></span>
+        </div>
+        <div>
+            <span>Generes</span>
+            <span id="generes"></span>
+        </div>
+        <div>
+            <span>Language</span>
+            <span id="language"></span>
+        </div>
+        <div>
+            <span>Awards</span>
+            <span id="awards"></span>
+        </div>
+    </div>
+        <div id="poster" class="section-right"></div>
+    </div>
         <div class="title">
             <h2>민서의 영화나라</h2>
         </div>
@@ -157,6 +261,8 @@ const API_KEY = '764ed67'; /*왜 API_KEY를 대문자로 썼게? 상수값의 �
         success : function(response){
             //영화 상세정보 확인!
             console.log(response);
+            
+            $('movie-section').css('visible');
         }
         });
     }
