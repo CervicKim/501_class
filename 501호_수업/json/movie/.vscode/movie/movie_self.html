@@ -19,56 +19,6 @@
     
 </head>
 <body>
-
-영화 상세 정보
-    <div class="movie-section">
-        <div class="back">
-<!--뒤로 가기 버튼-->
-            <a href="#">◀ come back Home</a>
-        </div>
-    <div class="section-left">
-<!--영화 상세 정보-->
-        <div class="movie-title" id="movie-title"></div>
-<!-- 영화 평점 -->
-        <div class="movie-rating"></div>
-        <span>Rating<i class="fa fa-star"></i> : <span id="rating"></span></span>
-        <span>Votes<i class="fa fa-thumbs-up"></i> : <span id-="votes"></span></span>
-        <span>Runtime<i class="fa fa-film"></i> : <span id="runtime"></span></span>
-        <span>Year<i class="fa fa-calendar"></i> : <span id="year"></span></span>
-<!-- 영화 줄거리 -->
-        <div class="movie-plot" id="movie-plot"></div>
-<!-- 영화 출연감독, 배우, 장르, 수상내역 -->
-        <div class="movie-info"></div>
-        <div>
-            <span>Director</span>
-            <span id="Director"></span>
-        </div>
-        <div>
-            <span>Stars</span>
-            <span id="stars"></span>
-        </div>
-        <div>
-            <span>Generes</span>
-            <span id="generes"></span>
-        </div>
-        <div>
-            <span>Language</span>
-            <span id="language"></span>
-        </div>
-        <div>
-            <span>Awards</span>
-            <span id="awards"></span>
-        </div>
-
-    </div>
-        <div class="section-right"></div>
-    </div>
-
-
-
-
-
-
 <!--영화 리스트-->
     <div class="container">
         
@@ -76,12 +26,14 @@
     <div class="movie-section">
         <div class="back">
 <!--뒤로 가기 버튼-->
-            <a href="#">◀ come back Home</a>
+            <a href="#" onclick="doClose()">◀ come back Home</a>
         </div>
-    <div class="section-left">
 <!--영화 상세 정보-->
+    <div class="section-left">
+<!-- 영화 제목 -->
+<div class="movie-list"></div>
 <div class="movie-title" id="movie-title"></div>
-<!-- 영화 평점 -->
+<!-- 영화 평점 --> 
         <div class="movie-rating"></div>
         <span>Rating<i class="fa fa-star"></i> : <span id="rating"></span></span>
         <span>Votes<i class="fa fa-thumbs-up"></i> : <span id-="votes"></span></span>
@@ -90,36 +42,40 @@
 <!-- 영화 줄거리 -->
         <div class="movie-plot" id="movie-plot"></div>
 <!-- 영화 출연감독, 배우, 장르, 수상내역 -->
-        <div class="movie-info"></div>
-        <div>
-            <span>Director</span>
-            <span id="Director"></span>
-        </div>
-        <div>
-            <span>Stars</span>
-            <span id="stars"></span>
-        </div>
-        <div>
-            <span>Generes</span>
-            <span id="generes"></span>
-        </div>
-        <div>
-            <span>Language</span>
-            <span id="language"></span>
-        </div>
-        <div>
-            <span>Awards</span>
-            <span id="awards"></span>
+        <div class="movie-info">
+            <div>
+                <span>Director</span>
+                <span id="Director"></span>
+            </div>
+            <div>
+                <span>Stars</span>
+                <span id="stars"></span>
+            </div>
+            <div>
+                <span>Generes</span>
+                <span id="generes"></span>
+            </div>
+            <div>
+                <span>Language</span>
+                <span id="language"></span>
+            </div>
+            <div>
+                <span>Awards</span>
+                <span id="awards"></span>
+            </div>
         </div>
     </div>
-        <div id="poster" class="section-right"></div>
+        <div id="poster-img" class="section-right">
+            <!-- 영화 포스터 이미지 -->
+        </div>
     </div>
-        <div class="title">
-            <h2>민서의 영화나라</h2>
+    <div class="movie-list">
+        <div class="site-title">
+            <h2>영화나라 감상공주</h2>
         </div>
         <div class="movie-row">
-        <div class="item" data-tilt onclick="getMovieDateilInfo(this)">
-            <div id="movie-0" class="poster"></div> <!--포스터 이미지 따오기-->
+        <div class="item" data-tilt onclick="getMovieDateilInfo(this)"><!--클릭하면 디테일한 정보 뜨게해주는 함수-->
+            <div id="movie-0" class="poster"></div><!-- 포스터 따오기-->
             <h4  id="movie-title-0" class="title"></h4> <!--영화 제목-->
             <p id="movie-year-0" class="year"></p> <!--개봉년도 표시-->
             <input id= "movie-id-0" type="hidden"/> <!--그냥은 안보이지만 콘솔을 보면 상세정보 다 뜨게~-->
@@ -143,43 +99,48 @@
             <input id= "movie-id-0" type="hidden"/>
         </div>
         <div class="item" onclick="getMovieDateilInfo(this)">
-                <div id="movie-4" class="title"></div>
-                <h4 id="movie-title-4" class="poster"></h4>
+                <div id="movie-4" class="poster"></div>
+                <h4 id="movie-title-4" class="title"></h4>
                 <p id="movie-year-4" class="year"></p>
                 <input id= "movie-id-0" type="hidden"/>
         </div>
     </div>
+</div>
 
     <div class="series-row">
-        <div class="item">
+        <div class="item" data-tilt onclick="getSeriesDetailInfo(this)">
             <div id="series-0" class="poster"></div>
             <h4  id="series-title-0" class="title"></h4>
+            <p id="series-year-0" class="year"></p>
         </div>
-        <div class="item">
-            
+        <div class="item" data-tilt onclick="getSeriesDetailInfo(this)">
             <div id="series-1" class="poster"></div>
             <h4  id="series-title-1" class="title"></h4>
+            <p id="series-year-1" class="year"></p>
         </div>
-        <div class="item">
+        <div class="item" data-tilt onclick="getSeriesDetailInfo(this)">
             <div id="series-2" class="poster"></div>
             <h4  id="series-title-2" class="title"></h4>
+            <p id="series-year-2" class="year"></p>
         </div>
-        <div class="item">
+        <div class="item" data-tilt onclick="getSeriesDetailInfo(this)">
             <div id="series-3" class="poster"></div>
             <h4  id="series-title-3" class="title"></h4>
+            <p id="series-year-3" class="year"></p>
         </div>
-        <div class="item">
+        <div class="item" data-tilt onclick="getSeriesDetailInfo(this)">
             <div id="series-4" class="poster"></div>
             <h4  id="series-title-4" class="title"></h4>
+            <p id="series-year-4" class="year"></p>
         </div>
     </div>
     </div>
 </body>
 
     <script src="https://code.jquery.com/jquery-3.6.1.js" 
-integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" 
-crossorigin="anonymous"></script>
-
+    integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" 
+    crossorigin="anonymous"></script>
+<script src="../js/tilt.js"></script>
 <script>
         //영화 사이트 조회하기~~!!!
 const API_KEY = '764ed67'; /*왜 API_KEY를 대문자로 썼게? 상수값의 변수이름은 대문자로!!작성. 카멜표기법이 아닌 언더바로 표기한다!! 약속~*/
@@ -246,6 +207,7 @@ const API_KEY = '764ed67'; /*왜 API_KEY를 대문자로 썼게? 상수값의 �
         });
     }
     function getMovieDateilInfo(obj){
+//클릭한 영화 고유 아이디 콘솔에 출력하기
         console.log(obj.children[3].value);
         var movieId = obj.children[3].value;
         //http://www.omdbapi.com/?apiKey=764ed67&i=tt0433400&plot=full
@@ -260,11 +222,43 @@ const API_KEY = '764ed67'; /*왜 API_KEY를 대문자로 썼게? 상수값의 �
         dataType: 'json',
         success : function(response){
             //영화 상세정보 확인!
-            console.log(response);
+            // console.log(response);
+            $('.movie-list').css('opacity', 0.3); //상세정보 뜰 때 뒤에가 불투명해지면 집중이 되겟죠!
+            $('movie-section').css('visible','visible');
+
+            $('#movie-title').empty();
+            $('#movie-title').append(response.Title);
+            $('#rating').empty();
+            $('#rating').append(response.imdbRating);
+            $('#votes').empty();
+            $('#votes').append(response.imdbVotes);
+            $('#runtime').empty();
+            $('#runtime').append(response.Runtime);
+            $('#year').empty();
+            $('#year').append(response.Year);
+            $('#movie-plot').empty();
+            $('#movie-plot').append(response.Plot);
+            $('#direactor').empty();
+            $('#direactor').append(response.Director);
+            $('#stars').empty();
+            $('#stars').append(response.Actors);
+            $('#generes').empty();
+            $('#generes').append(response.Genre);
+            $('#languages').empty();
+            $('#languages').append(response.Language);
+            $('#awards').empty();
+            $('#awards').append(response.Awards);
+            var html = '<img src="'+response.Poster + '">';
+            $('#poster-img').append(html);
+
             
-            $('movie-section').css('visible');
         }
         });
+    }
+    //상세화면 볼 땐 뒤가 뿌옇게 되는거임! 더 집중잘되게~끄고나서 다시 잘보임~
+    function doClose(){
+        $('.movie-section').css('visibility','hidden');
+        $('.movie-list').css('opacity',1);
     }
     </script>
 </html>
