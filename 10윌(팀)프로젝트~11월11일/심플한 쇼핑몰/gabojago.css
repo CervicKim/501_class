@@ -100,7 +100,9 @@ body{
     margin-bottom: 100px;
     box-sizing: border-box;
 }
-
+#mini_img{
+    width: 150px;
+}
 #mini_title{
     margin-top: 10px;
 
