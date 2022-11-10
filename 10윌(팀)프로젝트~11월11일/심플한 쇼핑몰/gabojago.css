@@ -37,7 +37,10 @@ body{
     z-index: 1000;
 }
 
-
+#mini_img{
+    width: 250px;
+    height: auto;
+}
 
 .menu{
     width: 100%;
@@ -46,7 +49,7 @@ body{
     letter-spacing: 1.2px;
     padding-top: 50px;
     display: flex;
-    color: hotpink;
+    color: rgb(207, 0, 0);
     font-size: medium;
     font-weight: 200 ;
     z-index: 555;
@@ -56,7 +59,7 @@ body{
 
 .menu:hover{
     width: 100%;
-    background-color: rgba(0, 0, 231, 0.678);
+    background-color: rgba(0, 255, 128, 0.678);
     transition-duration: 0.8s;
 }
 .big_img{
@@ -128,13 +131,18 @@ ul.imgs{
     padding: 0;
     margin: 0;
     list-style: none;
+    /* width: 90%; */
 }
 ul.imgs li{
+    /* width: 100%; */
     position: absolute;
     left: 1000px;
     transition-delay: 1s;
     padding: 0;
     margin: 0;
+}
+#img_8{
+
 }
 /*\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\*/
 .bullets{
