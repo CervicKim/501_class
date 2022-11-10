@@ -21,11 +21,22 @@ body{
     position: relative;
 }
 #frame_santa{
-    position: absolute; 
+    position: relative; 
     position: fixed;
     right: 0px; 
     bottom: 0px;
-    z-index: 18888;
+    margin: 0 auto;
+    z-index: 9999;
+}
+#santa_smail{
+    position: absolute;
+    top:0;
+    left:0;
+    display: none;
+}
+#frame_santa:hover #santa_smail{display: block;
+    /* width: 200%; */
+
 }
 .mini{
     width: 100%;
@@ -41,7 +52,106 @@ body{
     width: 250px;
     height: auto;
 }
+/* 미니 이미지 호버하면 바뀌는 구간 */
+#mini_img_4{
+    margin: 0;
+    position: relative;
+}
+#after_4{
+    top:0;
+    left: 0;
+    position: absolute;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s linear;
+}
+#mini_img_4:hover #after_4{
+    opacity: 1;
+    display: block;
+    }
 
+    #mini_img_5{
+    margin: 0;
+    position: relative;
+}
+#after_5{
+    top:0;
+    left: 0;
+    position: absolute;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s linear;
+}
+#mini_img_5:hover #after_5{
+    opacity: 1;
+    display: block;
+    }
+    #mini_img_5{
+    margin: 0;
+    position: relative;
+}
+#after_5{
+    top:0;
+    left: 0;
+    position: absolute;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s linear;
+}
+#mini_img_5:hover #after_5{
+    opacity: 1;
+    display: block;
+    }
+    #mini_img_5{
+        margin: 0;
+        position: relative;
+    }
+    #after_5{
+        top:0;
+        left: 0;
+        position: absolute;
+        display: none;
+        opacity: 0;
+        transition: opacity 0.5s linear;
+    }
+    #mini_img_5:hover #after_5{
+        opacity: 1;
+        display: block;
+        }
+        #mini_img_6{
+            margin: 0;
+            position: relative;
+        }
+        #after_6{
+            top:0;
+            left: 0;
+            position: absolute;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s linear;
+        }
+        #mini_img_6:hover #after_6{
+            opacity: 1;
+            display: block;
+            }
+            #mini_img_7{
+                margin: 0;
+                position: relative;
+            }
+            #after_7{
+                top:0;
+                left: 0;
+                position: absolute;
+                display: none;
+                opacity: 0;
+                transition: opacity 0.5s linear;
+            }
+            #mini_img_7:hover #after_7{
+                opacity: 1;
+                display: block;
+                }
+
+                /* 미니 호버바꾸기끝 */
 .menu{
     width: 100%;
     height: auto;
@@ -56,12 +166,16 @@ body{
     position: fixed;
     justify-content: space-around;
 }
-
+#menu_title{
+    width: 100%;
+    height: 150px;
+}
 .menu:hover{
     width: 100%;
     background-color: rgba(0, 255, 128, 0.678);
     transition-duration: 0.8s;
 }
+
 .big_img{
     width: 1920px;
     height: auto;
@@ -220,9 +334,24 @@ ul.imgs li{
     transition-delay: 2s;
     z-index: 9999;
 }
-#up{}
-#down{}
+#up{position: relative;
+    margin: 0;}
+#after_top{
+    position: absolute;
+    display: none;
+    top:0;
+    left: 0;
+}
+#up:hover #after_top{display: block;}
 
+#down{position: relative;
+    margin: 0;}
+#after_down{position: absolute;
+    display: none;
+    top:0;
+    left:0;
+}
+#down:hover #after_down{display: block;}
 #footer{
     margin: 200 300;
     width: 100%;
