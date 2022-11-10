@@ -275,20 +275,20 @@ ul.imgs{
     padding: 0;
     margin: 0;
     list-style: none;
-    width: 100%;
+    /* width: 100%; */
 }
 ul.imgs li{
-    /* width: 100%; */
+    max-width: 100%;
     position: absolute;
     left: 1000px;
     transition-delay: 1s;
     padding: 0;
     margin: 0;
 }
-#img_8{
-
+ul.imgs li img{
+    max-width: 100%;
 }
-/*\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\*/
+
 .bullets{
     position: absolute;
     left: 50%;
