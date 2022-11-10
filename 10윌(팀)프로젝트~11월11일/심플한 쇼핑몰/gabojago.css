@@ -167,7 +167,7 @@ body{
     justify-content: space-around;
 }
 #menu_title{
-    width: 100%;
+    width: auto%;
     height: 150px;
 }
 .menu:hover{
@@ -351,6 +351,7 @@ ul.imgs li{
     text-align: center;
     margin-top: 200px;
     margin-bottom: 100px;
+    color: white;
 }
 #middle_2{
     margin-top: 50px;
