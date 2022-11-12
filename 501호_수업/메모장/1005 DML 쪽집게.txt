@@ -16,7 +16,6 @@ where : 필터링 (*********집계함수 사용시 오류. having은 가능! 근
 -- 정렬 order by
 -- 내림차순 desc / 오름차순 asc(★*********<- 기본 디폴트 값이라 굳이 쓰지 않는다!)
 -- 차순 포함 실행순서
- from => where => select => order by
 
 *** where 조건에는 sum, avg, max... 같은 함수를 사용할 수 없다!!!!!!!!***
 대신 쓰이는 게 HAVING!!
